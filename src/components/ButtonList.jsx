@@ -1,6 +1,8 @@
 import Button from "./Button";
+import { useState } from "react";
 
 const ButtonList = () => {
+    const [buttonPressed, setButtonPressed] = useState(null);
     const languages = [
         {
             id: 1,
@@ -36,7 +38,12 @@ const ButtonList = () => {
     return (
         <div>
             {languages.map((language) => (
-                <Button language ={language} key={language.id}/>
+                <Button
+                    language={language}
+                    key={language.id}
+                    isOpen={buttonPressed === language.id}
+                    onToggle={() => setButtonPressed(language.id)}
+                />
             )
             )
             }

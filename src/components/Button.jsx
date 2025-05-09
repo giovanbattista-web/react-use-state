@@ -1,19 +1,25 @@
-import { useState } from "react";
+// import { useState } from "react";
 
-const Button = (props) => {
-    const { language } = props;
-    const [isOpen, setIsOpen] = useState(false);
+const Button = ({ language, isOpen, onToggle }) => {
     return (
         <>
             <div className="button">
                 <div>
-                    <button className="cursor_pointer" onClick={() => setIsOpen(!isOpen)}>
-                        {isOpen ? "-" : "+"}
-                        <h3>{language.title}</h3>
-                    </button>
+                    <div>
+                        <button className="cursor_pointer" onClick={onToggle}>
+                            <h3>{language.title}</h3>
+                        </button>
+                    </div>
                 </div>
                 <div>
-                    {isOpen && <div>{language.description}</div>}
+
+                    {isOpen ? <div>
+                        <button>
+                            <h3>{language.title}</h3>
+                            {language.description}
+                        </button>
+                    </div> : ""}
+
                 </div>
 
             </div>

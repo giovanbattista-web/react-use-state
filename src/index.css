@@ -1,9 +1,8 @@
  .button {
      display: flex;
-     align-items: flex-end;
-     justify-content: space-between;
  }
 
  .cursor_pointer {
      cursor: pointer;
+     padding: 0px 10px;
  }

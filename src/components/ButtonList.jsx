@@ -1,3 +1,5 @@
+import Button from "./Button";
+
 const ButtonList = () => {
     const languages = [
         {
@@ -31,7 +33,15 @@ const ButtonList = () => {
             description: "ReactJS è una libreria JavaScript per costruire interfacce utente, in particolare applicazioni a pagina singola. Consente agli sviluppatori di creare componenti UI riutilizzabili e di gestire efficacemente lo stato dell'applicazione."
         }
     ];
-    return <div></div>
-}
+    return (
+        <div>
+            {languages.map((language) => (
+                <Button language ={language} key={language.id}/>
+            )
+            )
+            }
+        </div>
+    )
+};
 
 export default ButtonList;

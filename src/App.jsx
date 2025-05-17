@@ -1,6 +1,14 @@
-import ButtonList from "./components/ButtonList";
+import { useState } from "react";
+import Header from "./components/Header";
+import Main from "./components/Main";
+
 function App() {
-    return <ButtonList />
+    return (
+        <>
+            <Header />
+            <Main />
+        </>
+    )
 }
 
 export default App;
